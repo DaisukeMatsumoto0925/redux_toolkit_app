@@ -11,6 +11,7 @@ const TaskForm: React.FC = () => {
   const { register, handleSubmit, reset } = useForm();
   const handleCreate = (data: Inputs) => {
     console.log(data);
+    reset();
   };
   return (
     <div className={styles.root}>
