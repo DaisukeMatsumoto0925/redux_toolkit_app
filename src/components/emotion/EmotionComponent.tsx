@@ -8,16 +8,19 @@ const EmotionComponent: React.FC = () => {
   }
 
   const Component: FC<ComponentProps> = ({ label, className }) => (
-    <div className={className}>{label ? "true" : "false"}</div>
+    <div className={className}>
+      {label ? "true" : "false"}
+      {console.log(label)}
+    </div>
   );
 
   const StyledComponent0 = styled(Component)`
-    color: ${({ label }) => (label ? "red" : "green")};
+    color: ${({ label }) => (label === true ? "red" : "blue")};
   `;
 
-  const StyledComponent1 = styled(Component)({
-    color: "red",
-  });
+  const StyledComponent1 = styled(Component)`
+    color: ${({ label }) => (label === true ? "red" : "blue")};
+  `;
 
   const isExpired = true;
   return (
